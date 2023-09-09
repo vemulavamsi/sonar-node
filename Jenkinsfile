@@ -50,6 +50,11 @@ pipeline {
             }
         }
         // Other stages
+        stage('sonar'){
+            steps{
+                sh 'npm run sonar'
+            }
+        }
     }
 }
 
