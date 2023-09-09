@@ -65,12 +65,12 @@ pipeline {
                 }
             }
         }
-        stage('nexus'){
-            steps{
-               sh 'npm publish'
-                //nexusPublish version: "${env.BUILD_NUMBER}", serverId:"nexus-server", repository:"maven-releases", pattern:'target
-            }
-        }
+        // stage('nexus'){
+        //     steps{
+        //        sh 'npm publish'
+        //         //nexusPublish version: "${env.BUILD_NUMBER}", serverId:"nexus-server", repository:"maven-releases", pattern:'target
+        //     }
+        // }
     }
 
 
