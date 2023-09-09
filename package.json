@@ -4,7 +4,7 @@
   "description": "This Project explains all Node JS examples",
   "main": "app.js",
   "publishConfig": {
-   "registry": " https://registry.npmjs.org/"
+   "registry": " https://34.207.63.16:9000/registry.npmjs.org/repository/mss-nodejsrepo/"
   },
   
   "scripts": {
@@ -27,11 +27,11 @@
   },
   "repository": {
     "type": "git",
-    "url": " https://34.207.63.16:3000/registry.npmjs.org/."
+    "url": " https://34.207.63.16:9000/registry.npmjs.org/repository/practice/"
   },
   "keywords": [
     "node",
-    "Mithun Technologies",
+    "vamsi",
     "express"
   ],
   "author": "vamsi",
