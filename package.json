@@ -4,7 +4,7 @@
   "description": "This Project explains all Node JS examples",
   "main": "app.js",
   "publishConfig": {
-   "registry": " https://34.207.63.16:9000/registry.npmjs.org/repository/mss-nodejsrepo/"
+   "registry": "http://34.204.82.216:8081/repository/sonar-node/"
   },
   
   "scripts": {
@@ -25,10 +25,7 @@
   "engines": {
     "node": "v10.6.0"
   },
-  "repository": {
-    "type": "git",
-    "url": " https://34.207.63.16:9000/registry.npmjs.org/repository/practice/"
-  },
+ 
   "keywords": [
     "node",
     "vamsi",
