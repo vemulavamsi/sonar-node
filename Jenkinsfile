@@ -65,7 +65,7 @@ pipeline {
                     // Set the registry and authenticate
                     sh "npm config set registry ${nexusRegistry}"
                     withCredentials([string(credentialsId: nexusCredentialsId, variable: 'nexustoken')]) {
-                        sh "npm login --registry=${nexusRegistry} --always-auth -<< EOF\n${nexustoken}\nEOF"
+                        sh "npm login --registry=${nexusRegistry} --scope=@your-scope --always-auth -<< EOF\n${nexustoken}\nEOF"
                         sh "npm install"
                     }
 
