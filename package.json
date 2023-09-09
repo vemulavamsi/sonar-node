@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "This Project explains all Node JS examples",
   "main": "app.js",
-  "publishConfig": {
-    "registry": " https://34.207.63.16:3000/registry.npmjs.org/."
-  },
+ 
   
   "scripts": {
     "server": "http-server -c-1 -p 9999",
