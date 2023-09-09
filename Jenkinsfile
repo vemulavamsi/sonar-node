@@ -59,8 +59,13 @@ pipeline {
             steps {
                 script {
                     // Run npm login and provide credentials
-                    withCredentials([string(credentialsId: 'nexus', variable: 'nexustoken')]) {
-                        sh "npm set //34.204.82.216:8081/repository/sonar-node/:_authToken=$nexustoken"
+                    def nexusRegistry = 'http://34.204.82.216:8081/repository/sonar-node/'
+                    def nexusCredentialsId = 'nexus' // Configure in Jenkins
+
+                    // Set the registry and authenticate
+                    sh "npm config set registry ${nexusRegistry}"
+                    withCredentials([string(credentialsId: nexusCredentialsId, variable: 'nexustoken')]) {
+                        sh "npm login --registry=${nexusRegistry} --scope=@your-scope --always-auth -<< EOF\n${nexustoken}\nEOF"
                         sh "npm install"
                     }
 
