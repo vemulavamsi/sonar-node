@@ -34,14 +34,11 @@ node
 }    
     
 }*/
-
 pipeline {
     agent any
-
     tools {
         nodejs "Node.js 16.19.1"
     }
-
     stages {
         stage('Build') {
             steps {
@@ -55,22 +52,5 @@ pipeline {
                 sh 'npm run sonar'
             }
         }
-         stage('Login to npm') {
-            steps {
-                script {
-                    // Run npm login and provide credentials
-                        sh "npm install"
-                    }
-
-                }
-            }
-        }
-        // stage('nexus'){
-        //     steps{
-        //        sh 'npm publish'
-        //         //nexusPublish version: "${env.BUILD_NUMBER}", serverId:"nexus-server", repository:"maven-releases", pattern:'target
-        //     }
-        // }
     }
-
-
+}
