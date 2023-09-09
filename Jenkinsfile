@@ -55,6 +55,18 @@ pipeline {
                 sh 'npm run sonar'
             }
         }
+         stage('Login to npm') {
+            steps {
+                script {
+                    // Run npm login and provide credentials
+                    withCredentials([string(credentialsId: 'nexus', variable: 'nexustoken')]) {
+                        sh "npm set //34.204.82.216:8081/repository/sonar-node/:_authToken=$nexustoken"
+                        sh "npm install"
+                    }
+
+                }
+            }
+        }
         stage('nexus'){
             steps{
                sh 'npm publish'
